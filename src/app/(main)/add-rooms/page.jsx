@@ -1,6 +1,7 @@
 "use client";
 import { FieldError, Input, Label, TextField, Select, ListBox, TextArea, Button, Description, Checkbox, CheckboxGroup } from '@heroui/react';
 import React, { useRef, useState } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 
 const AddRoomPage = () => {
 
@@ -29,7 +30,12 @@ const AddRoomPage = () => {
             body: JSON.stringify(data)
         })
         const result = await res.json();
-        console.log(result);
+        // console.log(result);
+        if(res.ok){
+            toast.success('Successfully Room added!')
+        }else{
+            toast.error(result.message || 'Failed to add room. Please try again.');
+        }
     }
 
     const handleReset = () => {
@@ -157,6 +163,7 @@ const AddRoomPage = () => {
                     </Button>
                     </div>
                 </form>
+                <Toaster></Toaster>
             </card>
         </div>
     );
