@@ -16,11 +16,20 @@ const AddRoomPage = () => {
         )
     }
 
-    const onSubmit =(e)=>{
+    const onSubmit =async (e)=>{
         e.preventDefault()
         const formData = new FormData(e.currentTarget);
         const data = Object.fromEntries(formData.entries());
-        console.log(data);
+        // console.log(data);
+       const res = await fetch('http://localhost:5000/create-room', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+        const result = await res.json();
+        console.log(result);
     }
 
     const handleReset = () => {
