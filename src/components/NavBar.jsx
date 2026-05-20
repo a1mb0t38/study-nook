@@ -5,7 +5,7 @@ import NavLink from './NavLink';
 
 const NavBar = () => {
     return (
-        <div className="flex items-center justify-between p-2 bg-base-100 shadow-sm">
+        <div className="flex items-center justify-between p-2 bg-[#fffaf0] shadow-sm">
             <div>
                 <a className="text-xl text-amber-700 flex items-center gap-2"><MdLocalLibrary className='text-xl' />Study-Nook</a>
             </div>
