@@ -13,6 +13,7 @@ const NavBar = () => {
                 <ul className='flex items-center gap-2 text-amber-700'>
                     <li><NavLink href={'/'}>Home</NavLink></li>
                     <li><NavLink href={'/rooms'}>All Rooms</NavLink></li>
+                    <li><NavLink href={'/add-rooms'}>Add Rooms</NavLink></li>
                 </ul>
             </div>
             <div className="flex gap-2">
