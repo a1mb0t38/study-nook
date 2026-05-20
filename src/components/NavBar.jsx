@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { MdLocalLibrary } from 'react-icons/md';
+import NavLink from './NavLink';
 
 const NavBar = () => {
     return (
@@ -9,9 +10,9 @@ const NavBar = () => {
                 <a className="text-xl text-amber-700 flex items-center gap-2"><MdLocalLibrary className='text-xl' />Study-Nook</a>
             </div>
             <div>
-                <ul className='flex items-center gap-2'>
-                    <li><Link href={'/'}>Home</Link></li>
-                    <li><Link href={'/rooms'}>All Rooms</Link></li>
+                <ul className='flex items-center gap-2 text-amber-700'>
+                    <li><NavLink href={'/'}>Home</NavLink></li>
+                    <li><NavLink href={'/rooms'}>All Rooms</NavLink></li>
                 </ul>
             </div>
             <div className="flex gap-2">
