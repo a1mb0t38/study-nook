@@ -1,10 +1,25 @@
 import Banner from "@/components/Banner";
+import RoomCard from "@/components/RoomCard";
 import Image from "next/image";
 
-export default function Home() {
+export default async function Home() {
+
+  const res = await fetch('http://localhost:5000/rooms');
+  const rooms = await res.json();
+  console.log(rooms);
+
   return (
-    <div className="text-red-600">
+    <div className="text-[#1a661d]">
       <Banner></Banner>
+      <div className="container mx-auto py-8">
+        <h1 className="text-center text-3xl font-bold mb-3">Latest Rooms</h1>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {rooms.map((room) => {
+            return <RoomCard key={room._id} room={room}></RoomCard>
+          })}
+        </div>
+      </div>
     </div>
   );
 }
