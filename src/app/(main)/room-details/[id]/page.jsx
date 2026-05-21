@@ -1,3 +1,4 @@
+import { EditModal } from '@/components/EditModal';
 import Image from 'next/image';
 import React from 'react';
 
@@ -9,10 +10,11 @@ const RoomDetailsPage = async ({ params }) => {
     const res = await fetch(`http://localhost:5000/room-details/${id}`);
     const data = await res.json();
 
-    console.log(data);
+    // console.log(data);
 
     return (
         <div className='w-full h-screen flex items-center justify-center gap-6'>
+            
             <Image src={data.imageUrl} alt={data.RoomName} width={500} height={300} className='rounded-lg'>
             </Image>
             <div className='w-96 space-y-2'>
@@ -23,7 +25,10 @@ const RoomDetailsPage = async ({ params }) => {
 
                 <p className="font-bold">Hourly rate: ${data.price}</p>
                 <p className="text-sm">Per Room: <span className="text-amber-700 font-bold">{data.capacity}</span> number of people</p>
-                <button className="btn bg-amber-700 text-white">Book Now</button>
+                <div className='flex items-center gap-4'>
+                    <button className="btn bg-white text-amber-700">Book Now</button>
+                <EditModal data={data}></EditModal>
+                </div>
             </div>
         </div>
     );

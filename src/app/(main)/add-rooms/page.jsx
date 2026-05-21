@@ -1,4 +1,5 @@
 "use client";
+
 import { FieldError, Input, Label, TextField, Select, ListBox, TextArea, Button, Description, Checkbox, CheckboxGroup } from '@heroui/react';
 import React, { useRef, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
@@ -49,7 +50,7 @@ const AddRoomPage = () => {
         <div className='max-w-7xl mx-auto bg-white  shadow-sm my-3 p-2 rounded-sm'>
             <div className='flex items-center justify-between mb-5'>
                 <h1 className='text-5xl font-bold'>Add Room</h1>
-                <button className='btn text-amber-700 font-bold'>Edit</button>
+                
             </div>
             <card>
                 <form
