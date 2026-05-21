@@ -52,7 +52,7 @@ const AddRoomPage = () => {
                 <h1 className='text-5xl font-bold'>Add Room</h1>
                 
             </div>
-            <card>
+            <div>
                 <form
                 onSubmit={onSubmit}
                     className="p-10 space-y-8"
@@ -165,7 +165,7 @@ const AddRoomPage = () => {
                     </div>
                 </form>
                 <Toaster></Toaster>
-            </card>
+            </div>
         </div>
     );
 };
