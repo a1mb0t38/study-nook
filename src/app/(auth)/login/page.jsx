@@ -1,4 +1,5 @@
 "use client";
+import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -17,22 +18,22 @@ const LoginPage = () => {
         formState: { errors },
     } = useForm();
 
-    // const handleLoginFunc = async (data) => {
-    //     // console.log(data, "data")
-    //     const { data: res, error } = await authClient.signIn.email({
-    //         name: data.name,
-    //         email: data.email,
-    //         password: data.password,
-    //         callbackURL: '/',
-    //     })
+    const handleLoginFunc = async (data) => {
+        // console.log(data, "data")
+        const { data: res, error } = await authClient.signIn.email({
+            name: data.name,
+            email: data.email,
+            password: data.password,
+            callbackURL: '/',
+        })
 
-    //     if (error) {
-    //         toast.error(error.message);
-    //     }
-    //     if (res) {
-    //         alert("Wellcome to our news site")
-    //     }
-    // }
+        if (error) {
+            toast.error(error.message);
+        }
+        if (res) {
+            toast.success("Login Successful")
+        }
+    }
 
     // const handleGoogleSignIn =async () => {
     //     const data = await authClient.signIn.social({
@@ -51,7 +52,7 @@ const LoginPage = () => {
                     <button className='btn text-amber-700'>Continue With Google</button>
                 </div>
                 <hr className='text-gray-300' />
-                <div>
+                <div onSubmit={handleSubmit(handleLoginFunc)}>
                     <form>
                         <fieldset className="fieldset">
                             <legend className="fieldset-legend">Email</legend>
