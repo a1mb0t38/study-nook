@@ -42,11 +42,11 @@ const RegisterPage = () => {
         }
     }
 
-    // const handleGoogleSignIn = async() => {
-    //     const data = await authClient.signIn.social({
-    //         provider: "google",
-    //     });
-    // }
+    const handleGoogleSignIn = async() => {
+        const data = await authClient.signIn.social({
+            provider: "google",
+        });
+    }
 
     return (
         <div className='min-h-[calc(100vh-100px)] flex items-center justify-center  overflow-hidden my-9'>
@@ -55,7 +55,9 @@ const RegisterPage = () => {
                 <h1 className='text-center text-3xl font-semibold text-amber-700'>Study-Nook</h1>
                 <p className='text-center text-base text-gray-800'>Register your account</p>
                 <div className='flex items-center justify-center'>
-                    <button className='btn text-amber-700'>Continue With Google</button>
+                    <button className='btn text-amber-700' onClick={handleGoogleSignIn}>
+                        Continue With Google
+                    </button>
                 </div>
                 <hr className='text-gray-300' />
                 <div>
