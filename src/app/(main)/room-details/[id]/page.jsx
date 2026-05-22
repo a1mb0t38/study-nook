@@ -1,3 +1,4 @@
+import { Booking } from '@/components/Booking';
 import DeleteRoom from '@/components/DeleteRoom';
 import { EditModal } from '@/components/EditModal';
 
@@ -37,7 +38,7 @@ const RoomDetailsPage = async ({ params }) => {
                 <p className="font-bold">Hourly rate: ${data?.price}</p>
                 <p className="text-sm">Per Room: <span className="text-amber-700 font-bold">{data?.capacity}</span> number of people</p>
                 <div className='flex items-center gap-4'>
-                    <button className="btn bg-white text-amber-700">Book Now</button>
+                    <Booking data={data}></Booking>
                     <EditModal data={data}></EditModal>
                     <DeleteRoom data={data}></DeleteRoom>
                 </div>

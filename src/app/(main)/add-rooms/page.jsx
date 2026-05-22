@@ -127,21 +127,7 @@ const AddRoomPage = () => {
                             <Label>Capacity</Label>
                             <Input max="150" min="0" placeholder="2,3 etc" />
                         </TextField>
-                    </div>
-{/* 
-                    <CheckboxGroup Label="Amenities" value={resetcheck} onchange={setResetCheck} className="gap-3">
-                        <Checkbox value='whiteboard'>Whiteboard</Checkbox>
-                        <Checkbox value='whiteboard'>Proctor</Checkbox>
-                        <Checkbox value='whiteboard'>Wifi</Checkbox>
-                        <Checkbox value='whiteboard'>Power-outlets</Checkbox>
-                        <Checkbox value='whiteboard'>Quiet-zone</Checkbox>
-                        <Checkbox value='whiteboard'>air-conditioning</Checkbox>
-                    </CheckboxGroup> */}
-
-
-
-
-                    {/* Buttons */}
+                    </div>               
 
                     <div className='flex items-center gap-3'>
                         <Button
