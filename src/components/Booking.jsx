@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { Toaster } from "react-hot-toast";
 import { toast, ToastContainer } from "react-toastify";
 
-export function Booking({ data }) {
+export default function Booking({ data }) {
 
     const { data: session, isPending, error, refetch } = authClient.useSession();
     const user = session?.user;
@@ -16,7 +16,7 @@ export function Booking({ data }) {
 
     console.log(userId, "userId");
     
-    const { price, _id: roomID, imageUrl } = data;
+    const { price, _id: roomID, imageUrl, RoomName, floor } = data;
     // console.log(price);
 
     const [bookingDate, setBookingDate] = useState("");
@@ -44,6 +44,8 @@ export function Booking({ data }) {
             roomID,
             userId,
             imageUrl,
+            RoomName,
+            floor,
             bookingDate,
             startTime: `${startTime?.hour}:${startTime?.minute}`,
             endTime: `${endTime?.hour}:${endTime?.minute}`,

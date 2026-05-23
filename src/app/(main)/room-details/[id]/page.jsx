@@ -1,4 +1,4 @@
-import { Booking } from '@/components/Booking';
+import Booking from '@/components/Booking';
 import DeleteRoom from '@/components/DeleteRoom';
 import { EditModal } from '@/components/EditModal';
 
