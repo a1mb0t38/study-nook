@@ -23,19 +23,19 @@ const NavBar = () => {
                 <ul className='flex items-center gap-2 text-amber-700'>
                     <li><NavLink href={'/'}>Home</NavLink></li>
                     <li><NavLink href={'/rooms'}>All Rooms</NavLink></li>
-                    {
-                        user && <li><NavLink href={'/add-rooms'}>Add Rooms</NavLink></li>
-                    }
-                    {
-                        user && <li><NavLink href={'/my-bookings'}>My Bookings</NavLink></li>
-                    }
-                    
+
+                    <li><NavLink href={'/add-rooms'}>Add Rooms</NavLink></li>
+
+
+                    <li><NavLink href={'/my-bookings'}>My Bookings</NavLink></li>
+
+
                 </ul>
             </div>
             <div className="flex gap-2">
 
                 {
-                    user ? <div className="dropdown dropdown-end">
+                   isPending ? <span className="loading loading-spinner text-error"></span> : user ? <div className="dropdown dropdown-end">
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
                                 <img
@@ -53,7 +53,7 @@ const NavBar = () => {
                                 </a>
                             </li>
                             <li><a>Settings</a></li>
-                            <li onClick={ async()=> await authClient.signOut()}><a>Logout</a></li>
+                            <li onClick={async () => await authClient.signOut()}><a>Logout</a></li>
                         </ul>
                     </div> : <>
                         <button className='btn text-amber-700 bg-white'><Link href={'/login'}>Login</Link></button>
