@@ -1,5 +1,6 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import { Envelope } from "@gravity-ui/icons";
 import { Button, Description, FieldError, Input, Label, Modal, Surface, TextField, TimeField } from "@heroui/react";
 import { useEffect, useState } from "react";
@@ -8,7 +9,14 @@ import { toast, ToastContainer } from "react-toastify";
 
 export function Booking({ data }) {
 
-    const {price, _id:roomID} = data;
+    const { data: session, isPending, error, refetch } = authClient.useSession();
+    const user = session?.user;
+
+    const userId = user?.id;
+
+    console.log(userId, "userId");
+    
+    const { price, _id: roomID, imageUrl } = data;
     // console.log(price);
 
     const [bookingDate, setBookingDate] = useState("");
@@ -34,6 +42,8 @@ export function Booking({ data }) {
         e.preventDefault();
         const bookingData = {
             roomID,
+            userId,
+            imageUrl,
             bookingDate,
             startTime: `${startTime?.hour}:${startTime?.minute}`,
             endTime: `${endTime?.hour}:${endTime?.minute}`,
@@ -51,7 +61,7 @@ export function Booking({ data }) {
         console.log(result);
         if (res.ok) {
             toast.success('Room booked successfully!');
-        }else{
+        } else {
             toast.error(result.message || 'Failed to book room. Please try again.');
         }
     }
@@ -73,7 +83,7 @@ export function Booking({ data }) {
                                     {/* date field */}
                                     <TextField name="BookingDate" type="date" isRequired>
                                         <Label>Booking Date</Label>
-                                        <Input type="date" min={todaystr} value={bookingDate} onChange={(e) => setBookingDate(e.target.value)}  className="rounded-2xl" />
+                                        <Input type="date" min={todaystr} value={bookingDate} onChange={(e) => setBookingDate(e.target.value)} className="rounded-2xl" />
                                         <FieldError />
                                     </TextField>
                                     {/* time fields */}

@@ -26,6 +26,9 @@ const NavBar = () => {
                     {
                         user && <li><NavLink href={'/add-rooms'}>Add Rooms</NavLink></li>
                     }
+                    {
+                        user && <li><NavLink href={'/my-bookings'}>My Bookings</NavLink></li>
+                    }
                     
                 </ul>
             </div>
