@@ -12,9 +12,9 @@ const MyBookingsPage = async () => {
     // console.log(session, "session from my bookings page");
     const user = session?.user;
     // console.log(user, "user from my bookings page");
-    const res = await fetch('http://localhost:5000/booking/6a103e020d1aa4e42bc25659')
+    const res = await fetch(`http://localhost:5000/booking/${user?.id}`);
     const bookings = await res.json();
-    // console.log(bookings, "booking data");
+    console.log(bookings, "booking data");
 
     return (
         <div className='max-w-7xl mx-auto px-4 py-8'>
