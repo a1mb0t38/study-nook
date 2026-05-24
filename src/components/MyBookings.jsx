@@ -16,7 +16,7 @@ const MyBookings = ({ booking }) => {
                 <span>Start Time: {booking?.startTime}</span>
                 <span> - </span>
                 <span>End Time: {booking?.endTime}</span> <br />
-                <BookingCancel roomID={booking?.roomID} />
+                <BookingCancel bookingID={booking?._id} />
                 <button className='btn bg-white text-amber-700'><Link href={`/room-details/${booking?.roomID}`} >View Details</Link></button>
             </div>
         </div>

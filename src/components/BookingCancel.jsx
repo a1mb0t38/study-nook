@@ -3,20 +3,26 @@
 
 import { AlertDialog, Button } from '@heroui/react';
 import React from 'react';
+import { toast, ToastContainer } from 'react-toastify';
 
-const BookingCancel = ({ roomID }) => {
+const BookingCancel = ({ bookingID }) => {
 
-    console.log(roomID, "roomID from booking cancel component");
+    // console.log(bookingID, "bookingID from booking cancel component");
 
     const handleCancelBooking = async () => {
-        const res = await fetch(`http://localhost:5000/booking/${roomID}`, {
+        const res = await fetch(`http://localhost:5000/booking/${bookingID}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
             }
         })
         const data = await res.json();
-        console.log(data, "cancel booking response");
+        if (res.ok) {
+            toast.success("Booking cancelled successfully");
+        } else {
+            toast.error("Failed to cancel booking");
+        }
+        // console.log(data, "cancel booking response");
     }
 
     return (
@@ -43,6 +49,7 @@ const BookingCancel = ({ roomID }) => {
                             </Button>
                         </AlertDialog.Footer>
                     </AlertDialog.Dialog>
+                    <ToastContainer />
                 </AlertDialog.Container>
             </AlertDialog.Backdrop>
         </AlertDialog>
