@@ -12,7 +12,11 @@ const RoomDetailsPage = async ({ params }) => {
 
     
 
-    const res = await fetch(`http://localhost:5000/room-details/${id}`, { cache: 'no-store' });
+    const res = await fetch(`http://localhost:5000/room-details/${id}`, {
+        headers: {
+            authorization: "logged in"
+        }
+    }, { cache: 'no-store' });
     if (!res.ok) {
         throw new Error('Failed to fetch room details');
     }

@@ -1,5 +1,6 @@
 "use client";
 import { authClient } from '@/lib/auth-client';
+import { Button } from '@heroui/react';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -48,7 +49,7 @@ const LoginPage = () => {
                 <h1 className='text-center text-3xl font-semibold '>Study-Nook</h1>
                 <p className='text-center text-base text-gray-800'>Login to your account</p>
                 <div className='flex items-center justify-center'>
-                    <button onClick={handleGoogleSignIn} className='btn text-amber-700'>Continue With Google</button>
+                    <Button onClick={handleGoogleSignIn} className='btn text-amber-700'>Continue With Google</Button>
                 </div>
                 <hr className='text-gray-300' />
                 <div>
