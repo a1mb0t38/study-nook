@@ -24,13 +24,13 @@ const NavBar = () => {
                     <li><NavLink href={'/'}>Home</NavLink></li>
                     <li><NavLink href={'/rooms'}>All Rooms</NavLink></li>
 
-                    {
-                        isPending ? "" : user ? <li><NavLink href={'/add-rooms'}>Add Rooms</NavLink></li> : ""
-                    }
+                    
+                        <li><NavLink href={'/add-rooms'}>Add Rooms</NavLink></li>
+                    
 
-                    {
-                        isPending ? "" : user ? <li><NavLink href={'/my-bookings'}>My Bookings</NavLink></li> : ""
-                    }
+                    
+                         <li><NavLink href={'/my-bookings'}>My Bookings</NavLink></li>
+                    
 
                 </ul>
             </div>

@@ -5,7 +5,7 @@ const AllRooms = async () => {
 
     const res = await fetch('http://localhost:5000/all-rooms');
     const rooms = await res.json();
-    console.log(rooms);
+    // console.log(rooms);
 
     return (
        <div className="text-[#1a661d]">
