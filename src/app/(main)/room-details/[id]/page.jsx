@@ -1,6 +1,8 @@
 import Booking from '@/components/Booking';
 import DeleteRoom from '@/components/DeleteRoom';
 import { EditModal } from '@/components/EditModal';
+import { auth } from '@/lib/auth';
+import { headers } from 'next/headers';
 
 import Image from 'next/image';
 import React from 'react';
@@ -10,11 +12,14 @@ const RoomDetailsPage = async ({ params }) => {
     const { id } = await params;
     // console.log(id);
 
-    
+    const  {token} = await auth.api.getToken({
+        headers: await headers()
+    })
+    console.log(token);
 
     const res = await fetch(`http://localhost:5000/room-details/${id}`, {
         headers: {
-            authorization: "logged in"
+            authorization: `Bearer ${token}`
         }
     }, { cache: 'no-store' });
     if (!res.ok) {

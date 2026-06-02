@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import { authClient } from '@/lib/auth-client';
 import { Button } from '@heroui/react';
 import Link from 'next/link';
@@ -22,11 +22,12 @@ const LoginPage = () => {
     const handleLoginFunc = async (data) => {
         // console.log(data, "data")
         const { data: res, error } = await authClient.signIn.email({
-            name: data.name,
+
             email: data.email,
             password: data.password,
             callbackURL: '/',
         })
+        // console.log(res, error, "res and error")
 
         if (error) {
             toast.error(error.message);
