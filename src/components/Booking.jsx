@@ -14,7 +14,7 @@ export default function Booking({ data }) {
 
     const userId = user?.id;
 
-    console.log(userId, "userId");
+    // console.log(userId, "userId");
     
     const { price, _id: roomID, imageUrl, RoomName, floor } = data;
     // console.log(price);
@@ -52,15 +52,19 @@ export default function Booking({ data }) {
             totalPrice
         };
         // console.log(bookingData);
+
+        const {data:tokenData} = await authClient.token();
+        // console.log(tokenData, "tokenData");
         const res = await fetch('http://localhost:5000/booking', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                authorization: `Bearer ${tokenData?.token}`
             },
             body: JSON.stringify(bookingData)
         })
         const result = await res.json();
-        console.log(result);
+        // console.log(result);
         if (res.ok) {
             toast.success('Room booked successfully!');
         } else {

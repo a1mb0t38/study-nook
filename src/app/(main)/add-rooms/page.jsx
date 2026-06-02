@@ -1,5 +1,6 @@
 "use client";
 
+import { authClient } from '@/lib/auth-client';
 import { FieldError, Input, Label, TextField, Select, ListBox, TextArea, Button, Description, Checkbox, CheckboxGroup } from '@heroui/react';
 import React, { useRef, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
@@ -17,16 +18,19 @@ const AddRoomPage = () => {
             checked ? [...prev, value] : prev.filter((item) => item !== value)
         )
     }
+    
 
     const onSubmit =async (e)=>{
         e.preventDefault()
         const formData = new FormData(e.currentTarget);
         const data = Object.fromEntries(formData.entries());
         // console.log(data);
+        const {data:tokenData} = await authClient.token();
        const res = await fetch('http://localhost:5000/create-room', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                authorization: `Bearer ${tokenData?.token}`
             },
             body: JSON.stringify(data)
         })

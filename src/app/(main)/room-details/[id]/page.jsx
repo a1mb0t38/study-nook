@@ -15,16 +15,16 @@ const RoomDetailsPage = async ({ params }) => {
     const  {token} = await auth.api.getToken({
         headers: await headers()
     })
-    console.log(token);
+    // console.log(token);
 
     const res = await fetch(`http://localhost:5000/room-details/${id}`, {
         headers: {
             authorization: `Bearer ${token}`
         }
     }, { cache: 'no-store' });
-    if (!res.ok) {
-        throw new Error('Failed to fetch room details');
-    }
+    // if (!res.ok) {
+    //     throw new Error('Failed to fetch room details');
+    // }
     const data = await res.json();
 
     if (!data) {

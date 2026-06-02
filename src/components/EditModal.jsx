@@ -1,5 +1,6 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import { Envelope } from "@gravity-ui/icons";
 import { Button, Description, FieldError, Input, Label, Modal, Surface, TextArea, TextField } from "@heroui/react";
 import { useState } from "react";
@@ -18,11 +19,14 @@ export function EditModal({ data }) {
         e.preventDefault()
         const formData = new FormData(e.currentTarget);
         const formdata = Object.fromEntries(formData.entries());
-        console.log(formdata);
+        // console.log(formdata);
+
+        const {data:tokenData} = await authClient.token();
         const res = await fetch(`http://localhost:5000/room-details/${data._id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
+                authorization: `Bearer ${tokenData?.token}`
             },
             body: JSON.stringify(formdata)
         })
