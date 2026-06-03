@@ -20,11 +20,11 @@ const RoomCard = ({ room }) => {
                     <p className="font-medium">Floor no: {room.floor}</p>
                     
                     <p className="font-bold">Hourly rate: ${room.price}</p>
-                    <p className="text-sm">Per Room: <span className="text-amber-700 font-bold">{room.capacity}</span> number of people</p>
+                    <p className="text-sm">Per Room: <span className="text-amber-800 font-bold">{room.capacity}</span> number of people</p>
                     
 
                     <div className="card-actions justify-end">
-                        <button className="btn bg-white text-amber-700"><Link href={`/room-details/${room._id}`}>View Details</Link></button>
+                        <button className="btn bg-white text-amber-800"><Link href={`/room-details/${room._id}`}>View Details</Link></button>
                     </div>
                 </div>
             </div>

@@ -138,7 +138,7 @@ const AddRoomPage = () => {
                         type="submit"
                         variant="outline"
 
-                        className=" rounded-sm w-full bg-white text-amber-700"
+                        className=" rounded-sm w-full bg-white text-amber-800"
                     >
                         Add Room
                     </Button>
@@ -148,7 +148,7 @@ const AddRoomPage = () => {
                         onPress={handleReset}
                         variant="outline"
 
-                        className=" rounded-sm w-full bg-white text-amber-700"
+                        className=" rounded-sm w-full bg-white text-amber-800"
                     >
                         Reset
                     </Button>

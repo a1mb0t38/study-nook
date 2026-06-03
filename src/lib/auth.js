@@ -3,7 +3,10 @@ import { MongoClient } from "mongodb";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
 import { jwt } from "better-auth/plugins";
 
+// console.log("MONGODB_URI loaded:", !!process.env.MONGODB_URI);
+
 const client = new MongoClient(process.env.MONGODB_URI);
+// await client.connect()
 const db = client.db("study-nook");
 
 export const auth = betterAuth({

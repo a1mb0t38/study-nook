@@ -5,6 +5,7 @@ import React from 'react';
 import { MdLocalLibrary } from 'react-icons/md';
 import NavLink from './NavLink';
 import { authClient } from '@/lib/auth-client';
+import ThemeToggle from './ThemeToggle';
 
 const NavBar = () => {
 
@@ -15,29 +16,25 @@ const NavBar = () => {
     const user = session?.user;
 
     return (
-        <div className="flex items-center justify-between p-2 bg-[#fffaf0] shadow-sm">
+        <div className="flex items-center justify-between p-2  shadow-sm">
             <div>
-                <a className="text-xl text-amber-700 flex items-center gap-2"><MdLocalLibrary className='text-xl' />Study-Nook</a>
+                <a className="text-xl text-amber-800 flex items-center gap-2"><MdLocalLibrary className='text-xl' />Study-Nook</a>
             </div>
             <div>
-                <ul className='flex items-center gap-2 text-amber-700'>
+                <ul className='flex items-center gap-2 text-amber-800'>
                     <li><NavLink href={'/'}>Home</NavLink></li>
                     <li><NavLink href={'/rooms'}>All Rooms</NavLink></li>
+                    <li><NavLink href={'/add-rooms'}>Add Rooms</NavLink></li>
+                    <li><NavLink href={'/my-bookings'}>My Bookings</NavLink></li>
 
-                    
-                        <li><NavLink href={'/add-rooms'}>Add Rooms</NavLink></li>
-                    
-
-                    
-                         <li><NavLink href={'/my-bookings'}>My Bookings</NavLink></li>
-                    
 
                 </ul>
             </div>
             <div className="flex gap-2">
+                <ThemeToggle />
 
                 {
-                   isPending ? <span className="loading loading-spinner text-error"></span> : user ? <div className="dropdown dropdown-end">
+                    isPending ? <span className="loading loading-spinner text-error"></span> : user ? <div className="dropdown dropdown-end">
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
                                 <img
@@ -58,8 +55,8 @@ const NavBar = () => {
                             <li onClick={async () => await authClient.signOut()}><a>Logout</a></li>
                         </ul>
                     </div> : <>
-                        <button className='btn text-amber-700 bg-white'><Link href={'/login'}>Login</Link></button>
-                        <button className='btn text-amber-700 bg-white'><Link href={'/register'}>Register</Link></button>
+                        <button className='btn text-amber-800 bg-white'><Link href={'/login'}>Login</Link></button>
+                        <button className='btn text-amber-800 bg-white'><Link href={'/register'}>Register</Link></button>
                     </>
                 }
             </div>

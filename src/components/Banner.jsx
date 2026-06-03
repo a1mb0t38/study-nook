@@ -19,7 +19,7 @@ const Banner = () => {
                     <p className="mb-5">
                         Browse and book quiet, private study rooms in your library. List your own room and earn.
                     </p>
-                    <button className="btn text-amber-700"><Link href={'/rooms'}>Explore More</Link></button>
+                    <button className="btn text-amber-800"><Link href={'/rooms'}>Explore More</Link></button>
                 </div>
             </div>
         </div>

@@ -52,10 +52,10 @@ const RegisterPage = () => {
         <div className='min-h-[calc(100vh-100px)] flex items-center justify-center  overflow-hidden my-9'>
             <div className='w-full space-y-4 max-w-md mx-auto rounded-md bg-white  p-9'>
                 
-                <h1 className='text-center text-3xl font-semibold text-amber-700'>Study-Nook</h1>
+                <h1 className='text-center text-3xl font-semibold text-amber-800'>Study-Nook</h1>
                 <p className='text-center text-base text-gray-800'>Register your account</p>
                 <div className='flex items-center justify-center'>
-                    <button className='btn text-amber-700' onClick={handleGoogleSignIn}>
+                    <button className='btn text-amber-800' onClick={handleGoogleSignIn}>
                         Continue With Google
                     </button>
                 </div>
@@ -102,7 +102,7 @@ const RegisterPage = () => {
                         </fieldset>
 
 
-                        <button className='btn w-full mt-3.5 bg-white text-amber-700 font-semibold'>Register</button>
+                        <button className='btn w-full mt-3.5 bg-white text-amber-800 font-semibold'>Register</button>
                     </form>
                     <ToastContainer></ToastContainer>
                     <p className='mt-3.5 text-center'>already have an account <Link className='text-green-700 font-bold' href={'/login'}>LogIn</Link> </p>

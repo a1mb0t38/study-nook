@@ -7,9 +7,7 @@ import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 export function EditModal({ data }) {
-
     const [Discription, setDiscription] = useState("");
-
 
     const isDiscriptionInvalid = Discription.length > 0 && Discription.length < 20;
 
@@ -43,7 +41,7 @@ export function EditModal({ data }) {
 
     return (
         <Modal>
-            <Button className="text-amber-700 font-bold bg-white btn">Edit</Button>
+            <Button className="text-amber-800 font-bold bg-white btn">Edit</Button>
             <Modal.Backdrop>
                 <Modal.Container placement="auto">
                     <Modal.Dialog className="sm:max-w-lg">

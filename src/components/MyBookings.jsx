@@ -6,7 +6,7 @@ import BookingCancel from './BookingCancel';
 
 const MyBookings = ({ booking }) => {
     return (
-        <div className='border text-[#1a661c] p-4 rounded-lg mb-4 flex items-center gap-4 w-full mt-4 border-amber-700 min-w-3xl'>
+        <div className='border text-green-800 p-4 rounded-lg mb-4 flex items-center gap-4 w-full mt-4 border-amber-800 min-w-3xl'>
             <Image className='rounded-sm' src={booking?.imageUrl} alt="library image" width={300} height={200} />
             <div>
                 <p>Booking Date: {booking?.bookingDate}</p>
@@ -17,7 +17,7 @@ const MyBookings = ({ booking }) => {
                 <span> - </span>
                 <span>End Time: {booking?.endTime}</span> <br />
                 <BookingCancel bookingID={booking?._id} />
-                <button className='btn bg-white text-amber-700'><Link href={`/room-details/${booking?.roomID}`} >View Details</Link></button>
+                <button className='btn bg-white text-amber-800'><Link href={`/room-details/${booking?.roomID}`} >View Details</Link></button>
             </div>
         </div>
     );

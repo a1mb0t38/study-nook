@@ -74,7 +74,7 @@ export default function Booking({ data }) {
 
     return (
         <Modal>
-            <Button className="btn bg-white text-amber-700">Book Room</Button>
+            <Button className="btn bg-white text-amber-800">Book Room</Button>
             <Modal.Backdrop>
                 <Modal.Container placement="auto">
                     <Modal.Dialog className="sm:max-w-md">
@@ -108,7 +108,7 @@ export default function Booking({ data }) {
                                         <Description>Enter the end time</Description>
                                     </TimeField>
                                     <p>Total Price: ${totalPrice}</p>
-                                    <button type="submit" onClick={handleBooking} className="btn bg-amber-700 text-white">Confirm Booking</button>
+                                    <button type="submit" onClick={handleBooking} className="btn bg-amber-800 text-white">Confirm Booking</button>
                                 </form>
                             </Surface>
                         </Modal.Body>
