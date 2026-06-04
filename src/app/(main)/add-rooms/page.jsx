@@ -26,7 +26,7 @@ const AddRoomPage = () => {
         const data = Object.fromEntries(formData.entries());
         // console.log(data);
         const {data:tokenData} = await authClient.token();
-       const res = await fetch('http://localhost:5000/create-room', {
+       const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/create-room`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

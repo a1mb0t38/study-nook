@@ -13,7 +13,7 @@ const BookingCancel = ({ bookingID }) => {
 
     const handleCancelBooking = async () => {
         const {data:tokenData} = await authClient.token();
-        const res = await fetch(`http://localhost:5000/booking/${bookingID}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/booking/${bookingID}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

@@ -1,36 +1,136 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📚 StudyNook – Library Study Room Booking Platform
 
-## Getting Started
+StudyNook is a full-stack web application that allows students and library users to discover, book, and manage study rooms efficiently. Users can browse available rooms, make bookings for specific time slots, manage their own listings, and prevent scheduling conflicts through an intelligent booking system.
 
-First, run the development server:
+## 🌐 Live Links
+
+- Frontend: https://study-nook-blush.vercel.app/
+- Backend API: https://study-nook-server-zeta.vercel.app/
+
+## 🔗 GitHub Repositories
+
+- Client Repository: https://github.com/a1mb0t38/study-nook
+- Server Repository: https://github.com/a1mb0t38/study-nook-server
+
+---
+
+## ✨ Features
+
+- Secure authentication with Email/Password and Google Sign-In.
+- JWT-based authentication using HTTP-only cookies.
+- Room owners can add, update, and delete their own room listings.
+- Real-time booking system with booking conflict detection.
+- Automatic booking cost calculation based on selected time slots.
+- Manage personal room listings and bookings from a dedicated dashboard.
+- Cancel future bookings with status tracking.
+- Dark/Light mode support with theme persistence.
+- Fully responsive design for mobile, tablet, and desktop devices.
+
+---
+
+## 🛠️ Technologies Used
+
+### Frontend
+
+- Next.js
+- React.js
+- JavaScript (ES6+)
+- Tailwind CSS
+- DaisyUI
+- HeroUI
+- React Icons
+
+### Backend
+
+- Node.js
+- Express.js
+- MongoDB
+- JWT (JSON Web Token)
+- Better Auth
+- Cookie Parser
+- CORS
+
+### Deployment & Authentication
+
+- Google OAuth
+- HTTP-Only Cookies
+- Vercel
+
+---
+
+## 🚀 Core Functionalities
+
+### Authentication
+
+- Email & Password Login/Register
+- Google Authentication
+- Protected Routes
+- Persistent User Sessions
+
+### Room Management
+
+- Add New Study Rooms
+- Update Existing Rooms
+- Delete Room Listings
+- View Detailed Room Information
+
+### Booking System
+
+- Book Study Rooms
+- Prevent Double Bookings
+- Cancel Future Bookings
+- Track Booking History
+
+---
+
+## 📦 Installation
+
+### Clone Repositories
+
+```bash
+git clone https://github.com/a1mb0t38/study-nook.git
+git clone https://github.com/a1mb0t38/study-nook-server.git
+```
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🔒 Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` file for the frontend and a `.env` file for the backend.
 
-## Learn More
+```env
+MONGODB_URI=your_mongodb_connection_string
+BETTER_AUTH_SECRET=your_secret_key
+BETTER_AUTH_URL=your_app_url
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+JWT_SECRET=your_jwt_secret
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎯 Future Improvements
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Email notifications for bookings
+- Room availability calendar
+- User reviews and ratings
+- Admin dashboard
+- Advanced analytics and reporting
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 👨‍💻 Developer
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Developed by Noor as a full-stack web application focused on secure authentication, room booking management, and modern responsive design.

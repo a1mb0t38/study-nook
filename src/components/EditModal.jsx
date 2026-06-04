@@ -20,7 +20,7 @@ export function EditModal({ data }) {
         // console.log(formdata);
 
         const {data:tokenData} = await authClient.token();
-        const res = await fetch(`http://localhost:5000/room-details/${data._id}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/room-details/${data._id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',

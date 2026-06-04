@@ -3,7 +3,7 @@ import React from 'react';
 
 const AllRooms = async () => {
 
-    const res = await fetch('http://localhost:5000/all-rooms');
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/all-rooms`, {cache: 'no-store'});
     const rooms = await res.json();
     // console.log(rooms);
 

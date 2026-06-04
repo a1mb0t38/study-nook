@@ -14,7 +14,7 @@ const DeleteRoom = ({ data }) => {
 
     const handleDelete = async () => {
         const {data:tokenData} = await authClient.token();
-        const res = await fetch(`http://localhost:5000/room-details/${data._id}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/room-details/${data._id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -25,6 +25,7 @@ const DeleteRoom = ({ data }) => {
         console.log(result);
         if(res.ok){
            toast.success('Successfully deleted room!');
+           router.refresh();
            router.push('/');
         }else{
             toast.error(result.message || 'Failed to delete room. Please try again.');
